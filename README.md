@@ -50,3 +50,6 @@
 * /build URL: `http://build.wpmu-develop.dev`
 * DB Name: `wpmu_develop`
 * DB Name: `wpmu_unit_tests`
+
+## Copyright / License
+vvv-multisite is copyright (c) 2014, the contributors of the VVV project under the [MIT License](https://github.com/Varying-Vagrant-Vagrants/vvv-multisite/blob/master/LICENSE).
