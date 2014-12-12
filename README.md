@@ -14,16 +14,16 @@
 * VM PATH: /srv/www/wpmu-default
 * Multisite Type: __subdomain__
 * URLs:
-  * Network URL: `http://local.wpmu.dev`
+  * Network URL: `http://wpmu.dev`
   * Sites:
-    * `http://site2.local.wpmu.dev`
-    * `http://site3.local.wpmu.dev`
-    * `http://site4.local.wpmu.dev`
-    * `http://site5.local.wpmu.dev`
-    * `http://site6.local.wpmu.dev` (only domain routing)
-    * `http://site7.local.wpmu.dev` (only domain routing)
-    * `http://site8.local.wpmu.dev` (only domain routing)
-    * `http://site9.local.wpmu.dev` (only domain routing)
+    * `http://site2.wpmu.dev`
+    * `http://site3.wpmu.dev`
+    * `http://site4.wpmu.dev`
+    * `http://site5.wpmu.dev`
+    * `http://site6.wpmu.dev` (only domain routing)
+    * `http://site7.wpmu.dev` (only domain routing)
+    * `http://site8.wpmu.dev` (only domain routing)
+    * `http://site9.wpmu.dev` (only domain routing)
 * DB Name: `wpmu_default`
 
 #### WordPress Multisite Trunk
@@ -31,16 +31,16 @@
 * VM PATH: /srv/www/wpmu-trunk
 * Multisite Type: __subdomain__
 * URLs:
-  * Network URL: `http://local.wpmu-trunk.dev`
+  * Network URL: `http://wpmu-trunk.dev`
   * Sites:
-    * `http://site2.local.wpmu-trunk.dev`
-    * `http://site3.local.wpmu-trunk.dev`
-    * `http://site4.local.wpmu-trunk.dev`
-    * `http://site5.local.wpmu-trunk.dev`
-    * `http://site6.local.wpmu-trunk.dev` (only domain routing)
-    * `http://site7.local.wpmu-trunk.dev` (only domain routing)
-    * `http://site8.local.wpmu-trunk.dev` (only domain routing)
-    * `http://site9.local.wpmu-trunk.dev` (only domain routing)
+    * `http://site2.wpmu-trunk.dev`
+    * `http://site3.wpmu-trunk.dev`
+    * `http://site4.wpmu-trunk.dev`
+    * `http://site5.wpmu-trunk.dev`
+    * `http://site6.wpmu-trunk.dev` (only domain routing)
+    * `http://site7.wpmu-trunk.dev` (only domain routing)
+    * `http://site8.wpmu-trunk.dev` (only domain routing)
+    * `http://site9.wpmu-trunk.dev` (only domain routing)
 * DB Name: `wpmu_trunk`
 
 #### @todo :: WordPress Multisite Develop

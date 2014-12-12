@@ -26,7 +26,7 @@ if [[ ! -d /srv/www/wpmu-default ]]; then
 define( 'WP_DEBUG', true );
 PHP
 	echo "Installing WordPress Multisite Stable..."
-	wp core multisite-install --allow-root --url=local.wpmu.dev --subdomains --quiet --title="Local WPMU Dev" --admin_name=admin --admin_email="admin@local.dev" --admin_password="password" --allow-root
+	wp core multisite-install --allow-root --url=wpmu.dev --subdomains --quiet --title="Local WPMU Dev" --admin_name=admin --admin_email="admin@local.dev" --admin_password="password" --allow-root
 
 	# Create sites 2-9
 	wp site create --allow-root --slug=site2 --title="WP MU (2)" --email="admin@local.dev" --quiet --allow-root
