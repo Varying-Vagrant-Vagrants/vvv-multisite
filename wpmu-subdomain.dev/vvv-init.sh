@@ -27,13 +27,13 @@ if [[ ! -d /srv/www/wpmu-subdomain ]]; then
 define( 'WP_DEBUG', true );
 PHP
 	echo "Installing WordPress Multisite Subdomain Stable..."
-	wp core multisite-install --allow-root --url=wpmu-subdomain.dev --subdomains --quiet --title="Local WPMU Subdomain Dev" --admin_name=admin --admin_email="admin@local.dev" --admin_password="password" --allow-root
+	wp core multisite-install --allow-root --url=wpmu-subdomain.dev --subdomains --quiet --title="WPMU Subdomain Dev" --admin_name=admin --admin_email="admin@local.dev" --admin_password="password" --allow-root
 
 	# Create sites 2-9
-	wp site create --allow-root --slug=site2 --title="WP MU (2)" --email="admin@local.dev" --quiet --allow-root
-	wp site create --allow-root --slug=site3 --title="WP MU (3)" --email="admin@local.dev" --quiet --allow-root
-	wp site create --allow-root --slug=site4 --title="WP MU (4)" --email="admin@local.dev" --quiet --allow-root
-	wp site create --allow-root --slug=site5 --title="WP MU (5)" --email="admin@local.dev" --quiet --allow-root
+	wp site create --allow-root --slug=site2 --title="WPMU Subdomain (2)" --email="admin@local.dev" --quiet --allow-root
+	wp site create --allow-root --slug=site3 --title="WPMU Subdomain (3)" --email="admin@local.dev" --quiet --allow-root
+	wp site create --allow-root --slug=site4 --title="WPMU Subdomain (4)" --email="admin@local.dev" --quiet --allow-root
+	wp site create --allow-root --slug=site5 --title="WPMU Subdomain (5)" --email="admin@local.dev" --quiet --allow-root
 
 else
 
