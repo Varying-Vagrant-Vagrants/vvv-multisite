@@ -1,7 +1,7 @@
 # Provision WordPress Multisite stable
 
 # Make a database, if we don't already have one
-echo -e "\nCreating database 'wpmu_default' (if it's not already there)"
+echo -e "\nCreating database 'wpmu_subdirectory' (if it's not already there)"
 mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS wpmu_subdirectory"
 mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON wpmu_subdirectory.* TO wp@localhost IDENTIFIED BY 'wp';"
 echo -e "\n DB operations done.\n\n"
@@ -9,9 +9,10 @@ echo -e "\n DB operations done.\n\n"
 # Nginx Logs
 if [[ ! -d /srv/log/wpmu-subdirectory ]]; then
 	mkdir /srv/log/wpmu-subdirectory
+fi
 	touch /srv/log/wpmu-subdirectory/error.log
 	touch /srv/log/wpmu-subdirectory/access.log
-fi
+
 # Install and configure the latest stable version of WordPress
 if [[ ! -d /srv/www/wpmu-subdirectory ]]; then
 
@@ -35,7 +36,9 @@ PHP
 	wp site create --allow-root --slug=site5 --title="WP MU (5)" --email="admin@local.dev" --quiet --allow-root
 
 else
+
 	echo "Updating WordPress Multisite Subdirectory Stable..."
 	cd /srv/www/wpmu-subdirectory
 	wp core upgrade --allow-root
+
 fi

@@ -1,0 +1,44 @@
+# Provision WordPress Multisite stable
+
+# Make a database, if we don't already have one
+echo -e "\nCreating database 'wpmu_subdomain' (if it's not already there)"
+mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS wpmu_subdomain"
+mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON wpmu_subdomain.* TO wp@localhost IDENTIFIED BY 'wp';"
+echo -e "\n DB operations done.\n\n"
+
+# Nginx Logs
+if [[ ! -d /srv/log/wpmu-subdomain ]]; then
+	mkdir /srv/log/wpmu-subdomain
+fi
+	touch /srv/log/wpmu-subdomain/error.log
+	touch /srv/log/wpmu-subdomain/access.log
+
+# Install and configure the latest stable version of WordPress
+if [[ ! -d /srv/www/wpmu-subdomain ]]; then
+
+	mkdir /srv/www/wpmu-subdomain
+	cd /srv/www/wpmu-subdomain
+
+	echo "Downloading WordPress Multisite Subdomain Stable, see http://wordpress.org/"
+	wp core download
+
+	echo "Configuring WordPress Multisite Subdomain Stable..."
+	wp core config --dbname=wpmu_subdomain --dbuser=wp --dbpass=wp --quiet --extra-php --allow-root <<PHP
+define( 'WP_DEBUG', true );
+PHP
+	echo "Installing WordPress Multisite Subdomain Stable..."
+	wp core multisite-install --allow-root --url=wpmu-subdomain.dev --subdomains --quiet --title="Local WPMU Subdomain Dev" --admin_name=admin --admin_email="admin@local.dev" --admin_password="password" --allow-root
+
+	# Create sites 2-9
+	wp site create --allow-root --slug=site2 --title="WP MU (2)" --email="admin@local.dev" --quiet --allow-root
+	wp site create --allow-root --slug=site3 --title="WP MU (3)" --email="admin@local.dev" --quiet --allow-root
+	wp site create --allow-root --slug=site4 --title="WP MU (4)" --email="admin@local.dev" --quiet --allow-root
+	wp site create --allow-root --slug=site5 --title="WP MU (5)" --email="admin@local.dev" --quiet --allow-root
+
+else
+
+	echo "Updating WordPress Multisite Subdomain Stable..."
+	cd /srv/www/wpmu-subdomain
+	wp core upgrade --allow-root
+
+fi
