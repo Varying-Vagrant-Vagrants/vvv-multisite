@@ -11,4 +11,4 @@
 > See the folders in this repo for detailed Readme files
 
 ## Copyright / License
-vvv-multisite is copyright (c) 2014, the contributors of the VVV project under the [MIT License](blob/master/LICENSE).
+vvv-multisite is copyright (c) 2014, the contributors of the VVV project under the [MIT License](LICENSE).
