@@ -22,6 +22,12 @@ if [[ ! -d /srv/www/wpmu-subdomain-trunk ]]; then
 	echo "Configuring WordPress Multisite Subdomain Trunk..."
 	cd /srv/www/wpmu-subdomain-trunk
 	wp core config --dbname=wpmu_subdomain_trunk --dbuser=wp --dbpass=wp --quiet --extra-php --allow-root <<PHP
+// Match any requests made via xip.io.
+if ( isset( \$_SERVER['HTTP_HOST'] ) && preg_match('/^(wpmu-subdomain-trunk.)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(.xip.io)\z/', \$_SERVER['HTTP_HOST'] ) ) {
+	define( 'WP_HOME', 'http://' . \$_SERVER['HTTP_HOST'] );
+	define( 'WP_SITEURL', 'http://' . \$_SERVER['HTTP_HOST'] );
+}
+
 define( 'WP_DEBUG', true );
 PHP
 
