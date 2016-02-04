@@ -20,7 +20,7 @@ if [[ ! -d /srv/www/wpmu-subdomain ]]; then
 	cd /srv/www/wpmu-subdomain
 
 	echo "Downloading WordPress Multisite Subdomain Stable, see http://wordpress.org/"
-	wp core download
+	wp core download --allow-root
 
 	echo "Configuring WordPress Multisite Subdomain Stable..."
 	wp core config --dbname=wpmu_subdomain --dbuser=wp --dbpass=wp --extra-php --allow-root <<PHP

@@ -20,7 +20,7 @@ if [[ ! -d /srv/www/wpmu-subdirectory ]]; then
 	cd /srv/www/wpmu-subdirectory
 
 	echo "Downloading WordPress Multisite Subdirectory Stable, see http://wordpress.org/"
-	wp core download
+	wp core download --allow-root
 
 	echo "Configuring WordPress Multisite Subdirectory Stable..."
 	wp core config --dbname=wpmu_subdirectory --dbuser=wp --dbpass=wp --extra-php --allow-root <<PHP
