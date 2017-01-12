@@ -4,7 +4,7 @@
 
 ## Getting Started
 1. Set up your environment with all the requirements for [VVV]() - Follow points 1. - 6. of [The First Vagrant Up](https://github.com/Varying-Vagrant-Vagrants/VVV#the-first-vagrant-up)
-2. Clone/DL this repo into `/www/vvv-multisite`
+2. Uncomment the following line `multisite: https://github.com/Varying-Vagrant-Vagrants/vvv-multisite.git` in the `vvv-config.yml` file present at the root of your VVV install
 3. Provision! `vagrant up && vagrant provision`
 
 ## Provided Sites
